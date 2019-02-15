@@ -1,0 +1,44 @@
+<!-- <nav class="navbar navbar-light" style="background-color: aquamarine">
+	<span class="navbar-brand mb-0 h1 text-light" routerLink="/"><i class="fa fa-user-o" aria-hidden="true"></i>
+		Profile</span>
+	<span class="mr-auto"></span>
+	<button class="btn btn-info mr-2" routerLink="/home">Home</button>
+</nav> -->
+<!-- <mat-toolbar color="primary">
+	<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+	<h1>Responsive App</h1>
+</mat-toolbar>
+
+<div fxLayout="row">
+	<mat-drawer-container>
+		<mat-drawer #snav [mode]="'side'">
+			<mat-nav-list>
+				<a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+			</mat-nav-list>
+		</mat-drawer>
+
+		<mat-drawer-content>
+			<p *ngFor="let content of fillerContent">{{content}}</p>
+		</mat-drawer-content>
+	</mat-drawer-container>
+</div> -->
+
+<mat-drawer-container>
+	<nav class="navbar navbar-light" style="background-color: aquamarine">
+		<span class="navbar-brand mb-0 h1 text-light" routerLink="/"><i class="fa fa-user-o" aria-hidden="true"></i>
+			Profile</span>
+		<span class="mr-auto"></span>
+		<button class="btn btn-info mr-2" routerLink="/home">Home</button>
+		<button type="button" mat-button (click)="drawer.toggle()">
+			Toggle sidenav
+		</button>
+	</nav>
+</mat-drawer-container>
+
+<mat-drawer #drawer class="example-sidenav" mode="side">
+	<p>Auto-resizing sidenav</p>
+	<p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+	<button (click)="showFiller = !showFiller" mat-raised-button>
+		Toggle extra text
+	</button>
+</mat-drawer>
